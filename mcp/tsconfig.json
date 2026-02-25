@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "*": [
+        "./*"
+      ],
+      "@modelcontextprotocol/server": [
+        "./node_modules/@modelcontextprotocol/server/src/index.ts"
+      ],
+      "@modelcontextprotocol/express": [
+        "./node_modules/@modelcontextprotocol/express/src/index.ts"
+      ],
+      "@modelcontextprotocol/node": [
+        "./node_modules/@modelcontextprotocol/node/src/index.ts"
+      ],
+      "@modelcontextprotocol/hono": [
+        "./node_modules/@modelcontextprotocol/hono/src/index.ts"
+      ],
+      "@modelcontextprotocol/core": [
+        "./node_modules/@modelcontextprotocol/server/node_modules/@modelcontextprotocol/core/src/index.ts"
+      ],
+    }
+  },
+  "include": [
+    "**/src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

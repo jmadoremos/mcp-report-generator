@@ -1,2 +1,3 @@
-# mcp-report-generator
-Generates custom reports based on database query results
+# MCP-Based Report Generator
+
+Generates custom reports based on database query results into a CSV file.

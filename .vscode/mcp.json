@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "csv-generator": {
+      "type": "http",
+      "url": "http://localhost:3001/mcp"
+    },
+    "postgres-query": {
+      "type": "http",
+      "url": "http://localhost:3000/mcp"
+    }
+  }
+}

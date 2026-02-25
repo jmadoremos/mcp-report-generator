@@ -1,0 +1,31 @@
+{
+  "name": "postgres-query",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "keywords": [ "mcp", "postgresql", "postgres", "database" ],
+  "author": "James Michael Adoremos <http://github.com/jmadoremos>",
+  "license": "ISC",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsx -r dotenv/config src/index.ts server",
+    "dev": "tsx watch --clear-screen=false -r dotenv/config src/index.ts server"
+  },
+  "engines": {
+    "node": ">=24"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.0",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "pg": "^8.18.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.3.0",
+    "@types/pg": "^8.16.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  }
+}

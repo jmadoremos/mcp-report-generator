@@ -76,7 +76,6 @@ web_modules/
 
 # Next.js build output
 .next
-out
 
 # Nuxt.js build / generate output
 .nuxt
@@ -137,3 +136,6 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# Other files
+out/*csv

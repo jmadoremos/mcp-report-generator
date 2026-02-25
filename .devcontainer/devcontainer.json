@@ -1,0 +1,70 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+  "name": "mcp-report-generator",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "dockerComposeFile": "docker-compose.yaml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "shutdownAction": "stopCompose",
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/nils-geistmann/devcontainers-features/zsh:0": {
+      "setLocale": true,
+      "theme": "robbyrussell",
+      "plugins": "git docker",
+      "desiredLocale": "en_US.UTF-8 UTF-8"
+    },
+    "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
+      "plugins": "ssh-agent npm",
+      "omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions",
+      "username": "node"
+    }
+  },
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  "forwardPorts": [
+    3000,
+    3001
+  ],
+  "portsAttributes": {
+    "3000": {
+      "label": "postgres-query",
+      "protocol": "http"
+    },
+    "3001": {
+      "label": "csv-generator",
+      "protocol": "http"
+    }
+  },
+  // Use 'postCreateCommand' to run commands after the container is created.
+  // "postCreateCommand": "",
+  "postStartCommand": ".devcontainer/scripts/install-dependencies.sh",
+  // "postAttachCommand": "",
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // AI-powered code completion and agent development
+        "GitHub.copilot",
+        // Highlight CSV and TSV files, Run SQL-like queries
+        "mechatroner.rainbow-csv",
+        // Real-time collaborative development from the comfort of your favorite tools.
+        "ms-vsliveshare.vsliveshare",
+        // File icons for better workspace navigation
+        "vscode-icons-team.vscode-icons"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "zsh": {
+          "path": "/usr/bin/zsh"
+        }
+      }
+    }
+  },
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+  // Mount local files and directories to the container.
+  "mounts": [
+    "source=${localEnv:HOME}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached"
+  ]
+}
