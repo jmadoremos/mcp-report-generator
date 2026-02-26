@@ -1,9 +1,14 @@
 {
-  "name": "postgres-query",
+  "name": "postgres",
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "keywords": [ "mcp", "postgresql", "postgres", "database" ],
+  "keywords": [
+    "mcp",
+    "postgresql",
+    "postgres",
+    "database"
+  ],
   "author": "James Michael Adoremos <http://github.com/jmadoremos>",
   "license": "ISC",
   "scripts": {
@@ -16,6 +21,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.27.0",
+    "csv-stringify": "^6.6.0",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "pg": "^8.18.0",

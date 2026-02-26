@@ -23,16 +23,11 @@
   },
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   "forwardPorts": [
-    3000,
-    3001
+    3000
   ],
   "portsAttributes": {
     "3000": {
-      "label": "postgres-query",
-      "protocol": "http"
-    },
-    "3001": {
-      "label": "csv-generator",
+      "label": "postgres",
       "protocol": "http"
     }
   },
@@ -44,6 +39,8 @@
   "customizations": {
     "vscode": {
       "extensions": [
+        // The leading open-source AI code agent
+        "Continue.continue",
         // AI-powered code completion and agent development
         "GitHub.copilot",
         // Highlight CSV and TSV files, Run SQL-like queries
